@@ -1,7 +1,7 @@
 m = Map("autoupdate", translate("AutoUpdate"),
 translate("AutoUpdate LUCI supports scheduled upgrade & one-click firmware upgrade")
-.. [[<br /><br /><a href="https://github.com/Hyy2001X/AutoBuild-Actions">]]
-.. translate("Powered by AutoBuild-Actions")
+.. [[<br /><br /><a href="https://github.com/xopenwrt/X-OpenWrt-New">]]
+.. translate("Powered by AutoBuild-Actions of X-OpenWrt")
 .. [[</a>]]
 )
 
