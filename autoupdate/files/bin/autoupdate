@@ -377,7 +377,7 @@ function LOAD_VARIABLE() {
 function ALTER_GITHUB() {
 	if [[ ! $1 =~ https://github.com/ || $# != 1 ]]
 	then
-		ECHO r "Github 地址格式错误,正确示例: [https://github.com/Hyy2001X/AutoBuild-Actions]"
+		ECHO r "Github 地址格式错误,正确示例: [https://github.com/X/AutoBuild-Actions]"
 		return 1
 	fi
 	UCI_Github="$(uci get autoupdate.@autoupdate[0].github 2> /dev/null)"
@@ -584,7 +584,7 @@ function GET_FW_INFO() {
 		ECHO r "未检测到 API 文件!"
 		exit 1
 	}
-	Info=$(grep "AutoBuild-${OP_REPO}-${TARGET_PROFILE}" ${API_File} | grep "${x86_Boot_Method}" | grep "${TARGET_FLAG}" | awk 'BEGIN {MAX = 0} {if ($6+0 > MAX+0) {MAX=$6 ;content=$0} } END {print content}')
+	Info=$(grep "AutoBuild-${OP_REPO}-${TARGET_PROFILE}" ${API_File} | grep "${x86_Boot_Method}" | grep "\-${TARGET_FLAG}\-" | awk 'BEGIN {MAX = 0} {if ($6+0 > MAX+0) {MAX=$6 ;content=$0} } END {print content}')
 	Result="$(awk '{print $"'${1}'"}' <<< ${Info} 2> /dev/null)"
 	case $1 in
 	1) Type="固件名称";;
@@ -1380,7 +1380,7 @@ function KILL_PROCESS() {
 
 Script_Path="$(cd $(dirname $0) 2> /dev/null ; pwd 2> /dev/null)"
 Script_File="$0"
-Script_Url="https://raw.githubusercontent.com/Hyy2001X/AutoBuild-Packages/master/autoupdate/files/bin/autoupdate"
+Script_Url="https://raw.githubusercontent.com/xopenwrt/AutoBuild-Packages/master/autoupdate/files/bin/autoupdate"
 
 Tmp_Path=/tmp/autoupdate
 Config_Path=/etc/autoupdate
