@@ -14,7 +14,6 @@ define Package/$(PKG_NAME)
 	CATEGORY:=Network
 	TITLE:=A Lightweight self-hosted netdisk application
 	DEPENDS:=@(arm||x86_64||mipsel||mips||aarch64)
-	URL:=https://webd.cf
 endef
 
 ifeq ($(ARCH),aarch64)
@@ -71,7 +70,7 @@ endif
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-openwrt-$(TARGET_ARCH).tar.gz
 #PKG_SOURCE_URL:=https://cnt2.cf/webd/$(PKG_VERSION)/
-PKG_SOURCE_URL:=xopenwrt.github.io/package/webd/
+PKG_SOURCE_URL:=https://xopenwrt.github.io/package/webd/
 PKG_HASH:=skip
 
 UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
