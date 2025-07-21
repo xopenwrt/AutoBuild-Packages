@@ -1315,7 +1315,7 @@ function AutoUpdate_Main() {
 			case $1 in
 			[Cc]loud)
 				URL="$(Proxy_X ${Script_Url} G@@1 X@@1)"
-				DOWNLOADER --dl ${DL_DEPENDS[@]} --url ${URL} --path ${Tmp_Path} --print --type 临时程序 | egrep -o "V[0-9].+"
+				DOWNLOADER --dl ${DL_DEPENDS[@]} --url ${URL} --path ${Tmp_Path} --print --type 临时程序 --no-url-name | egrep -o "V[0-9].+"
 			;;
 			*)
 				echo ${Version}
